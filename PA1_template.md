@@ -6,17 +6,6 @@
 
 ```r
 activity <- read.csv(unz("activity.zip","activity.csv"))
-head(activity)
-```
-
-```
-##   steps       date interval
-## 1    NA 2012-10-01        0
-## 2    NA 2012-10-01        5
-## 3    NA 2012-10-01       10
-## 4    NA 2012-10-01       15
-## 5    NA 2012-10-01       20
-## 6    NA 2012-10-01       25
 ```
 
 
@@ -28,6 +17,7 @@ head(activity)
 library(plyr)
 stepbyday <- ddply(activity,.(date),summarise, totalsteps = sum(steps, na.rm = TRUE) )
 ```
+
 Now we can make a histogram of the variable *totalsteps* in *stepbyday* data frame:
 
 ```r
@@ -35,6 +25,7 @@ hist(stepbyday$totalsteps, xlab = "Number of Steps", main = "Histogram of the To
 ```
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
+
 2. Again using the variable *totalsteps* in *stepbyday* data frame we can easily calculate the **mean** number of steps taken each day, which appears to be 
 
 ```r
@@ -45,6 +36,7 @@ meansteps
 ```
 ## [1] 9354
 ```
+
 We can also calculate the median number of steps in the same manner:
 
 ```r

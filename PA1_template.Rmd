@@ -5,7 +5,6 @@
 1. Here I suppose that the zipped data on acitivity (activity.zip from the initial github repository) is in the wroking directory. I first unzip the data and load it into R:
 ```{r}
 activity <- read.csv(unz("activity.zip","activity.csv"))
-head(activity)
 ```
 
 
@@ -16,15 +15,18 @@ head(activity)
 library(plyr)
 stepbyday <- ddply(activity,.(date),summarise, totalsteps = sum(steps, na.rm = TRUE) )
 ```
+
 Now we can make a histogram of the variable *totalsteps* in *stepbyday* data frame:
 ```{r}
 hist(stepbyday$totalsteps, xlab = "Number of Steps", main = "Histogram of the Total Number\n of Steps Taken Each Day")
 ```
+
 2. Again using the variable *totalsteps* in *stepbyday* data frame we can easily calculate the **mean** number of steps taken each day, which appears to be 
 ```{r}
 meansteps <- mean(stepbyday$totalsteps)
 meansteps
 ```
+
 We can also calculate the median number of steps in the same manner:
 ```{r}
 mediansteps <- median(stepbyday$totalsteps)
