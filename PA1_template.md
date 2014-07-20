@@ -198,9 +198,9 @@ Subset and plot the data on weekends
 ```r
 par(mar = c(3,3,5,3))
 par(mfrow=c(2,1)) 
-plot(byinterval_weekday$interval, byinterval_weekday$averagesteps, type = "l", xlab = "Interval", ylab = "Average Number of Steps", main = "Weekdays")
+plot(byinterval_weekday$interval, byinterval_weekday$averagesteps, type = "l", xlab = "Interval", ylab = "Average Number of Steps", main = "Weekday")
 mtext("Average Daily Activity Pattern", side = 3, line = 3, cex = 2)
-plot(byinterval_weekend$interval, byinterval_weekend$averagesteps, type = "l", xlab = "Interval", ylab = "Average Number of Steps", main = "Weekends")
+plot(byinterval_weekend$interval, byinterval_weekend$averagesteps, type = "l", xlab = "Interval", ylab = "Average Number of Steps", main = "Weekend")
 ```
 
 ![plot of chunk unnamed-chunk-19](figure/unnamed-chunk-19.png) 
