@@ -45,7 +45,7 @@ Now the variable *averagesteps* in the data frame *stepbyinterval* stores the av
 plot(stepbyinterval$interval, stepbyinterval$averagesteps, type = "l", xlab = "Interval", ylab = "Average Number of Steps", main = "Average Daily Activity Pattern")
 ```
 
-2. I can also find the five-minute interval with the highest average number of steps taken:
+2. I can also find the five-minute interval with the highest average number of steps taken (first the index is found, then the actual interval):
 ```{r}
 highest <- which.max(stepbyinterval$averagesteps)
 stepbyinterval$interval[highest]

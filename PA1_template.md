@@ -64,7 +64,7 @@ plot(stepbyinterval$interval, stepbyinterval$averagesteps, type = "l", xlab = "I
 
 ![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7.png) 
 
-2. I can also find the five-minute interval with the highest average number of steps taken:
+2. I can also find the five-minute interval with the highest average number of steps taken (first the index is found, then the actual interval):
 
 ```r
 highest <- which.max(stepbyinterval$averagesteps)
